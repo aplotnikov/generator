@@ -13,4 +13,7 @@ repositories {
 
 dependencies {
     compile 'org.codehaus.groovy:groovy-all:2.4.6'
+    compile 'edu.washington.cs.types.checker:checker-framework:1.7.0'
+
+    testCompile group: 'org.spockframework', name: 'spock-core', version: '1.0-groovy-2.4'
 }
