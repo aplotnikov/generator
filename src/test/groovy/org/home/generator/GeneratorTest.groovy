@@ -23,7 +23,7 @@ class GeneratorTest extends Specification {
         assert generator.functions() == ['x+x', 'x+y', 'y+x', 'y+y']
     }
 
-    def "generator should generate one function for input parameters: x and y and sing '-'"() {
+    def "generator should generate one function with input parameters: x and y and sing '-'"() {
 
         given: "The generator with configuration for parameters: x and y and sing '-'"
         def generator = new Generator(
