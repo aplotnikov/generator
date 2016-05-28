@@ -1,11 +1,9 @@
 package org.home.generator.function
 
 import spock.lang.Specification
-import spock.lang.Title
 
 import static NodeTypes.FUNCTION
 
-@Title('Specification for function node class')
 class FunctionNodeTest extends Specification {
     def node
 

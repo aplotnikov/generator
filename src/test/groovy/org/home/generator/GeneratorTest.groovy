@@ -1,9 +1,7 @@
 package org.home.generator
 
 import spock.lang.Specification
-import spock.lang.Title
 
-@Title("Validation of main functionality of generator")
 class GeneratorTest extends Specification {
     def "IllegalArgumentException should be thrown when no parameters are configured"() {
         given: "The generator configuration with empty parameters configuration"
