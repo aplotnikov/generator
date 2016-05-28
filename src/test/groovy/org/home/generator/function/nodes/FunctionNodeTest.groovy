@@ -1,14 +1,15 @@
-package org.home.generator.function
+package org.home.generator.function.nodes
 
 import spock.lang.Specification
-
-import static NodeTypes.FUNCTION
 
 class FunctionNodeTest extends Specification {
     def node
 
     void setup() {
-        node = new FunctionNode(FUNCTION)
+        def function = Mock(Function.class)
+        function.toString() >> "function"
+
+        node = new FunctionNode(function)
     }
 
     def "New instance of node should contain no children"() {
@@ -53,6 +54,6 @@ class FunctionNodeTest extends Specification {
         def stringRepresentation = node.toString()
 
         then:
-        assert stringRepresentation == 'FunctionNode[type = FUNCTION, children = [childNode1, childNode2]]'
+        assert stringRepresentation == 'TreeNode[type = FUNCTION, attachedObject = function, children = [childNode1, childNode2]]'
     }
 }

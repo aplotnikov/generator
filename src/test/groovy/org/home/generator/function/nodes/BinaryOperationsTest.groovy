@@ -1,4 +1,4 @@
-package org.home.generator.function
+package org.home.generator.function.nodes
 
 import spock.lang.Specification
 import spock.lang.Unroll
