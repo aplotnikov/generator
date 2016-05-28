@@ -5,11 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static java.util.Collections.unmodifiableList;
+import static java.util.stream.Collectors.joining;
 
 public class FunctionNode {
     private final List<FunctionNode> children;
+    private final NodeType nodeType;
 
-    public FunctionNode() {
+    public FunctionNode(@Nonnull NodeType nodeType) {
+        this.nodeType = nodeType;
         this.children = new ArrayList<>();
     }
 
@@ -24,5 +27,14 @@ public class FunctionNode {
 
     public boolean hasChildren() {
         return !children.isEmpty();
+    }
+
+    @Override
+    public String toString() {
+        return "FunctionNode[" + "type = " + nodeType.name() + ", " +
+                "children = [" + children.stream()
+                                         .map(FunctionNode::toString)
+                                         .collect(joining(", ")) +
+                "]]";
     }
 }
