@@ -1,8 +1,8 @@
-package org.home.generator.function.nodes;
+package org.home.generator.tree.nodes;
 
 import javax.annotation.Nonnull;
 
-import static org.home.generator.function.nodes.NodeTypes.FUNCTION;
+import static org.home.generator.tree.nodes.NodeTypes.FUNCTION;
 
 public class FunctionNode extends AbstractTreeNode<Function> {
     public FunctionNode(@Nonnull Function function) {

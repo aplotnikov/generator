@@ -1,12 +1,12 @@
-package org.home.generator;
+package org.home.generator.tree;
 
-import org.home.generator.function.nodes.AbstractTreeNode;
-import org.home.generator.function.nodes.BinaryOperationNode;
-import org.home.generator.function.nodes.BinaryOperations;
-import org.home.generator.function.nodes.Function;
-import org.home.generator.function.nodes.FunctionNode;
-import org.home.generator.function.nodes.Parameter;
-import org.home.generator.function.nodes.ParameterNode;
+import org.home.generator.tree.nodes.AbstractTreeNode;
+import org.home.generator.tree.nodes.BinaryOperationNode;
+import org.home.generator.tree.nodes.BinaryOperations;
+import org.home.generator.tree.nodes.Function;
+import org.home.generator.tree.nodes.FunctionNode;
+import org.home.generator.tree.nodes.Parameter;
+import org.home.generator.tree.nodes.ParameterNode;
 
 import javax.annotation.Nonnull;
 import java.util.Set;

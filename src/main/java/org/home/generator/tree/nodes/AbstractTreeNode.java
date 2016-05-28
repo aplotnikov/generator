@@ -1,4 +1,4 @@
-package org.home.generator.function.nodes;
+package org.home.generator.tree.nodes;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;

@@ -1,8 +1,8 @@
-package org.home.generator.function.nodes;
+package org.home.generator.tree.nodes;
 
 import javax.annotation.Nonnull;
 
-import static org.home.generator.function.nodes.NodeTypes.BINARY_OPERATION;
+import static org.home.generator.tree.nodes.NodeTypes.BINARY_OPERATION;
 
 public class BinaryOperationNode extends AbstractTreeNode<BinaryOperations> {
     public BinaryOperationNode(@Nonnull BinaryOperations attachedObject) {

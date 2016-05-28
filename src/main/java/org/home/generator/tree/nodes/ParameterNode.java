@@ -1,8 +1,8 @@
-package org.home.generator.function.nodes;
+package org.home.generator.tree.nodes;
 
 import javax.annotation.Nonnull;
 
-import static org.home.generator.function.nodes.NodeTypes.PARAMETER;
+import static org.home.generator.tree.nodes.NodeTypes.PARAMETER;
 
 public class ParameterNode extends AbstractTreeNode<Parameter> {
     public ParameterNode(@Nonnull Parameter parameter) {
