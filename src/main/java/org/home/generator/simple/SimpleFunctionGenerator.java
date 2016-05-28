@@ -1,6 +1,6 @@
 package org.home.generator.simple;
 
-import org.home.generator.Generator;
+import org.home.generator.FunctionGenerator;
 
 import javax.annotation.Nonnull;
 import java.util.LinkedList;
@@ -9,14 +9,14 @@ import java.util.List;
 import static com.google.common.base.Preconditions.checkArgument;
 import static java.util.Collections.unmodifiableList;
 
-public class SimpleGenerator implements Generator {
+public class SimpleFunctionGenerator implements FunctionGenerator {
     private final List<String> parameters;
     private final List<String> binaryOperations;
     private final int generatedBinaryOperationsAmount;
 
     private final List<String> functions;
 
-    public SimpleGenerator(@Nonnull List<String> parameters, @Nonnull List<String> binaryOperations, int generatedBinaryOperationsAmount) {
+    public SimpleFunctionGenerator(@Nonnull List<String> parameters, @Nonnull List<String> binaryOperations, int generatedBinaryOperationsAmount) {
         checkArgument(!parameters.isEmpty(), "\'parameters\' argument has to be not empty");
         checkArgument(!binaryOperations.isEmpty(), "\'binaryOperations\' argument has to be not empty");
         checkArgument(generatedBinaryOperationsAmount > 0, "\'generatedBinaryOperationsAmount\' argument has to be not empty");

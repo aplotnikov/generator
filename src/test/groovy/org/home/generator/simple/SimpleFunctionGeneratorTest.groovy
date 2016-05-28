@@ -2,14 +2,14 @@ package org.home.generator.simple
 
 import spock.lang.Specification
 
-class SimpleGeneratorTest extends Specification {
+class SimpleFunctionGeneratorTest extends Specification {
     def "IllegalArgumentException should be thrown when no parameters are configured"() {
         given:
         List parameters = Mock(List.class)
         parameters.isEmpty() >> true
 
         when:
-        new SimpleGenerator(parameters, [], 0)
+        new SimpleFunctionGenerator(parameters, [], 0)
 
         then:
         def exception = thrown(IllegalArgumentException.class)
@@ -27,7 +27,7 @@ class SimpleGeneratorTest extends Specification {
         sings.isEmpty() >> true
 
         when:
-        new SimpleGenerator(parameters, sings, 0)
+        new SimpleFunctionGenerator(parameters, sings, 0)
 
         then:
         def exception = thrown(IllegalArgumentException.class)
@@ -45,7 +45,7 @@ class SimpleGeneratorTest extends Specification {
         sings.isEmpty() >> false
 
         when:
-        new SimpleGenerator(parameters, sings, 0)
+        new SimpleFunctionGenerator(parameters, sings, 0)
 
         then:
         def exception = thrown(IllegalArgumentException.class)
@@ -57,7 +57,7 @@ class SimpleGeneratorTest extends Specification {
 
     def "The generator should generate four functions with input parameters: x and y and sing '+'"() {
         given:
-        def generator = new SimpleGenerator(
+        def generator = new SimpleFunctionGenerator(
                 ['x', 'y'],
                 ['+'],
                 1
@@ -72,7 +72,7 @@ class SimpleGeneratorTest extends Specification {
 
     def "The generator should generate four functions with input parameters: x and y and sing '-'"() {
         given:
-        def generator = new SimpleGenerator(
+        def generator = new SimpleFunctionGenerator(
                 ['x', 'y'],
                 ['-'],
                 1
@@ -87,7 +87,7 @@ class SimpleGeneratorTest extends Specification {
 
     def "The generator should generate 32 functions with input parameters: x, y and sings: '+', '-'"() {
         given:
-        def generator = new SimpleGenerator(
+        def generator = new SimpleFunctionGenerator(
                 ['x', 'y'],
                 ['+', '-'],
                 2
@@ -102,7 +102,7 @@ class SimpleGeneratorTest extends Specification {
 
     def "The generator should generate 8 functions with input parameter x and sings: '+', '-'"() {
         given:
-        def generator = new SimpleGenerator(
+        def generator = new SimpleFunctionGenerator(
                 ['x'],
                 ['+', '-'],
                 2
