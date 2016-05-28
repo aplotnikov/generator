@@ -1,6 +1,6 @@
 package org.home.generator.function;
 
-public enum NodeType {
+public enum NodeTypes {
     FUNCTION,
     PARAMETER,
     SIGN

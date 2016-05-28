@@ -9,9 +9,9 @@ import static java.util.stream.Collectors.joining;
 
 public class FunctionNode {
     private final List<FunctionNode> children;
-    private final NodeType nodeType;
+    private final NodeTypes nodeType;
 
-    public FunctionNode(@Nonnull NodeType nodeType) {
+    public FunctionNode(@Nonnull NodeTypes nodeType) {
         this.nodeType = nodeType;
         this.children = new ArrayList<>();
     }
