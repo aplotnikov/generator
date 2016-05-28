@@ -13,46 +13,46 @@ class FunctionNodeTest extends Specification {
 
     def "New instance of node should contain no children"() {
         when: "the node is created"
-        then: "the node contains no children"
+        then:
         assert !node.hasChildren()
     }
 
     def "The list of children should be unmodifiable"() {
         given: "function node"
-        when: "the list of children is changing"
+        when:
         node.getChildren().add(Mock(FunctionNode.class))
 
-        then: "UnsupportedOperationException is thrown"
+        then:
         thrown(UnsupportedOperationException.class)
     }
 
     def "The list of children should be modified via 'addChild' method"() {
         given: "root function node"
-        and: "child function node"
+        and:
         def childNode = Mock(FunctionNode.class)
 
-        when: "'addChild' method is executed"
+        when:
         node.addChild(childNode)
 
-        then: "root node contains child node"
+        then:
         assert node.hasChildren()
         assert node.getChildren() == [childNode]
     }
 
     def "'toString' method should show information about node type and children"() {
         given: "root function node"
-        and: "child function node"
+        and:
         def childNode = Mock(FunctionNode.class)
         childNode.toString() >>> ["childNode1", "childNode2"]
 
-        and: "root node contains children"
+        and:
         node.addChild(childNode)
         node.addChild(childNode)
 
-        when: "'toString' method is launched"
+        when:
         def stringRepresentation = node.toString()
 
-        then: "String content should contains information about node type and children nodes"
+        then:
         assert stringRepresentation == 'FunctionNode[type = FUNCTION, children = [childNode1, childNode2]]'
     }
 }

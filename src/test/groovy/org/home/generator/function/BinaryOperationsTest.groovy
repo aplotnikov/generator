@@ -6,7 +6,7 @@ import spock.lang.Unroll
 class BinaryOperationsTest extends Specification {
     @Unroll
     def "'toString' method for #operation should return #expectedToStringContent"() {
-        given: "binary operation"
+        given:
         def binaryOperation = BinaryOperations.valueOf(operation)
 
         when:
