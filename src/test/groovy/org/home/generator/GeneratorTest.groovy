@@ -58,7 +58,6 @@ class GeneratorTest extends Specification {
 
 
     def "The generator should generate four functions with input parameters: x and y and sing '+'"() {
-
         given: "The generator with configuration for parameters: x and y and sing '+'"
         def generator = new Generator(
                 ['x', 'y'],
@@ -77,7 +76,6 @@ class GeneratorTest extends Specification {
     }
 
     def "The generator should generate four functions with input parameters: x and y and sing '-'"() {
-
         given: "The generator with configuration for parameters: x and y and sing '-'"
         def generator = new Generator(
                 ['x', 'y'],
