@@ -1,0 +1,45 @@
+{
+  "attachedObject": {},
+  "nodeType": "FUNCTION",
+  "children": [
+    {
+      "attachedObject": {
+        "value": 1,
+        "name": "x"
+      },
+      "nodeType": "PARAMETER",
+      "children": [
+        {
+          "attachedObject": "PLUS",
+          "nodeType": "BINARY_OPERATION",
+          "children": [
+            {
+              "attachedObject": {
+                "value": 1,
+                "name": "x"
+              },
+              "nodeType": "PARAMETER",
+              "children": [
+              ]
+            }
+          ]
+        },
+        {
+          "attachedObject": "MINUS",
+          "nodeType": "BINARY_OPERATION",
+          "children": [
+            {
+              "attachedObject": {
+                "value": 1,
+                "name": "x"
+              },
+              "nodeType": "PARAMETER",
+              "children": [
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
