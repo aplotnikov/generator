@@ -1,5 +1,6 @@
 package org.home.generator.tree.nodes
 
+import org.home.generator.configuration.Function
 import spock.lang.Specification
 
 class FunctionNodeTest extends Specification {

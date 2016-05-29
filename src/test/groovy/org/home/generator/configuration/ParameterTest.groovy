@@ -1,4 +1,4 @@
-package org.home.generator.tree.nodes
+package org.home.generator.configuration
 
 import spock.lang.Specification
 import spock.lang.Unroll
@@ -41,9 +41,11 @@ class ParameterTest extends Specification {
 
     }
 
-    def "'toString' method should return information about parameter name and value"() {
-        when: "parameter is created with name='x' and value='10'"
+    def "'toString' method should return content which contains information about parameter name and value"() {
+        when:
+        def actualTextParameterRepresentation = parameter.toString()
+
         then:
-        assert parameter.toString() == "Parameter[name='x', value=10]"
+        assert actualTextParameterRepresentation == "Parameter[name='x', value=10]"
     }
 }

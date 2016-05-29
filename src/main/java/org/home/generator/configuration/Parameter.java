@@ -1,4 +1,4 @@
-package org.home.generator.tree.nodes;
+package org.home.generator.configuration;
 
 import javax.annotation.Nonnull;
 import java.math.BigDecimal;

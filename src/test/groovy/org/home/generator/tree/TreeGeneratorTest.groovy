@@ -3,13 +3,13 @@ package org.home.generator.tree
 import groovy.json.JsonOutput
 import groovy.json.JsonSlurper
 import org.home.generator.tree.nodes.FunctionNode
-import org.home.generator.tree.nodes.Parameter
+import org.home.generator.configuration.Parameter
 import spock.lang.Specification
 
 import static java.math.BigDecimal.ONE
 import static java.math.BigDecimal.TEN
-import static org.home.generator.tree.nodes.BinaryOperations.MINUS
-import static org.home.generator.tree.nodes.BinaryOperations.PLUS
+import static org.home.generator.configuration.BinaryOperations.MINUS
+import static org.home.generator.configuration.BinaryOperations.PLUS
 
 class TreeGeneratorTest extends Specification {
     void assertTree(FunctionNode functionNode, String pathToExpectedJsonViewFile) {

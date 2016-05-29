@@ -1,22 +1,22 @@
-package org.home.generator.tree.nodes
+package org.home.generator.configuration
 
 import spock.lang.Specification
 import spock.lang.Unroll
 
 class BinaryOperationsTest extends Specification {
     @Unroll
-    def "'toString' method for #operation should return #expectedToStringContent"() {
+    def "'toString' method for #operation should return #expectedTextOperationRepresentation"() {
         given:
         def binaryOperation = BinaryOperations.valueOf(operation)
 
         when:
-        def actualToStringContent = binaryOperation.toString()
+        def actualTextOperationRepresentation = binaryOperation.toString()
 
         then:
-        assert actualToStringContent == expectedToStringContent
+        assert actualTextOperationRepresentation == expectedTextOperationRepresentation
 
         where:
-        operation  || expectedToStringContent
+        operation  || expectedTextOperationRepresentation
         'PLUS'     || '+'
         'MINUS'    || '-'
         'MULTIPLY' || '*'

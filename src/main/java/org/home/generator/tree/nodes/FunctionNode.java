@@ -1,5 +1,7 @@
 package org.home.generator.tree.nodes;
 
+import org.home.generator.configuration.Function;
+
 import javax.annotation.Nonnull;
 
 import static org.home.generator.tree.nodes.NodeTypes.FUNCTION;

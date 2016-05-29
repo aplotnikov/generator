@@ -2,10 +2,10 @@ package org.home.generator.tree;
 
 import org.home.generator.tree.nodes.AbstractTreeNode;
 import org.home.generator.tree.nodes.BinaryOperationNode;
-import org.home.generator.tree.nodes.BinaryOperations;
-import org.home.generator.tree.nodes.Function;
+import org.home.generator.configuration.BinaryOperations;
+import org.home.generator.configuration.Function;
 import org.home.generator.tree.nodes.FunctionNode;
-import org.home.generator.tree.nodes.Parameter;
+import org.home.generator.configuration.Parameter;
 import org.home.generator.tree.nodes.ParameterNode;
 
 import javax.annotation.Nonnull;

@@ -1,4 +1,4 @@
-package org.home.generator.tree.nodes;
+package org.home.generator.configuration;
 
 public enum BinaryOperations {
     PLUS('+'),
