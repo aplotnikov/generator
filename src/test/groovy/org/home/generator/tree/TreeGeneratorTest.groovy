@@ -2,8 +2,9 @@ package org.home.generator.tree
 
 import groovy.json.JsonOutput
 import groovy.json.JsonSlurper
-import org.home.generator.tree.nodes.FunctionNode
+import org.home.generator.configuration.FunctionGeneratorConfiguration
 import org.home.generator.configuration.Parameter
+import org.home.generator.tree.nodes.FunctionNode
 import spock.lang.Specification
 
 import static java.math.BigDecimal.ONE
@@ -26,14 +27,14 @@ class TreeGeneratorTest extends Specification {
 
     def "The generator should generate tree from configuration: x, y parameters, '+' sign, available amount of node 3"() {
         given:
-        def generator = new TreeGenerator(
-                [
-                        new Parameter('x', ONE),
-                        new Parameter('y', TEN)
-                ] as Set,
-                [PLUS] as Set,
-                3
-        )
+        def functionGeneratorConfiguration = Mock(FunctionGeneratorConfiguration.class)
+        functionGeneratorConfiguration.isValid() >> true
+        functionGeneratorConfiguration.getParameters() >> [new Parameter('x', ONE), new Parameter('y', TEN)]
+        functionGeneratorConfiguration.getBinaryOperations() >> [PLUS]
+        functionGeneratorConfiguration.getAvailableElementsAmount() >> 3
+
+        and:
+        def generator = new TreeGenerator(functionGeneratorConfiguration)
 
         when:
         def functionTree = generator.generate()
@@ -44,14 +45,14 @@ class TreeGeneratorTest extends Specification {
 
     def "The generator should generate tree from configuration: x, y parameters and '+', '-' signs"() {
         given:
-        def generator = new TreeGenerator(
-                [
-                        new Parameter('x', ONE),
-                        new Parameter('y', TEN)
-                ] as Set,
-                [PLUS, MINUS] as Set,
-                3
-        )
+        def functionGeneratorConfiguration = Mock(FunctionGeneratorConfiguration.class)
+        functionGeneratorConfiguration.isValid() >> true
+        functionGeneratorConfiguration.getParameters() >> [new Parameter('x', ONE), new Parameter('y', TEN)]
+        functionGeneratorConfiguration.getBinaryOperations() >> [PLUS, MINUS]
+        functionGeneratorConfiguration.getAvailableElementsAmount() >> 3
+
+        and:
+        def generator = new TreeGenerator(functionGeneratorConfiguration)
 
         when:
         def functionTree = generator.generate()
@@ -62,16 +63,34 @@ class TreeGeneratorTest extends Specification {
 
     def "The generator should generate tree from configuration: x parameter and '+', '-' signs"() {
         given:
-        def generator = new TreeGenerator(
-                [new Parameter('x', ONE)] as Set,
-                [PLUS, MINUS] as Set,
-                3
-        )
+        def functionGeneratorConfiguration = Mock(FunctionGeneratorConfiguration.class)
+        functionGeneratorConfiguration.isValid() >> true
+        functionGeneratorConfiguration.getParameters() >> [new Parameter('x', ONE)]
+        functionGeneratorConfiguration.getBinaryOperations() >> [PLUS, MINUS]
+        functionGeneratorConfiguration.getAvailableElementsAmount() >> 3
+
+        and:
+        def generator = new TreeGenerator(functionGeneratorConfiguration)
 
         when:
         def functionTree = generator.generate()
 
         then:
         assertTree(functionTree, '/tree/expected_tree_one_parameter_two_binary_operations.json')
+    }
+
+    def "IllegalStateException should be thrown when generator configuration is configured improperly"() {
+        given:
+        def functionGeneratorConfiguration = Mock(FunctionGeneratorConfiguration.class)
+        functionGeneratorConfiguration.isValid() >> false
+
+        when:
+        new TreeGenerator(functionGeneratorConfiguration)
+
+        then:
+        def exception = thrown(IllegalStateException.class)
+
+        and:
+        assert exception.message == 'Function generator configuration has to be properly configured.'
     }
 }
